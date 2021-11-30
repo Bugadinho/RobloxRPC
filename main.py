@@ -56,6 +56,8 @@ def Disconnect():
             return True
         except:
             RPC = None
+            StartTime = 0
+            Connected = False
             return False
     return False
 
