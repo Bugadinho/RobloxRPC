@@ -21,7 +21,13 @@ RobloSecurity = args.security
 
 ThisPresence = API.Presence.PresenceAPI(roblosecurity = RobloSecurity)
 
-RPC = Presence(ClientID, pipe=0)
+RPC = None
+while RPC is None:
+    try:
+        RPC = Presence(ClientID, pipe=0)
+    except:
+        print("Failed to connect to Discord, is it running?")
+        time.sleep(5)
 
 Connected = False
 StartTime = 0
